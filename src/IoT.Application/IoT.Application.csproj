@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>IoT</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Module\Account\src\Volo.Abp.Account.Application\Volo.Abp.Account.Application.csproj" />
+    <ProjectReference Include="..\..\..\Module\BTS\src\IoT.BTS.Application\IoT.BTS.Application.csproj" />
+    <ProjectReference Include="..\..\..\Module\Identity\src\Volo.Abp.Identity.Application\Volo.Abp.Identity.Application.csproj" />
+    <ProjectReference Include="..\IoT.Domain\IoT.Domain.csproj" />
+    <ProjectReference Include="..\IoT.Application.Contracts\IoT.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="3.3.1" />
+  </ItemGroup>
+
+</Project>

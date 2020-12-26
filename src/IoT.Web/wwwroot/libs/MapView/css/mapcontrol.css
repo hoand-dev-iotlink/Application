@@ -1,0 +1,42 @@
+#map4d .mf-map4d .mf-ui .mf-button, #mapMode3D .mf-map4d .mf-ui .mf-button {
+    margin: 2px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 0px !important;
+    /*border: 1px solid darken(rgba(255,255,255,1), 5%);*/
+    background-color: rgb(247, 247, 247) !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    -moz-user-select: none !important;
+    box-shadow: none !important;
+    /* background-color: #fff; */
+    border: 1px solid #dcdcdc !important;
+}
+#map4d .mf-map4d .mf-ui .horizontal, #mapMode3D .mf-map4d .mf-ui .horizontal {
+    display: flex;
+    align-self: flex-end;
+    height: 108px !important;
+    flex-direction: column;
+}
+#map4d .mf-map4d .mf-ui .footer-map, #mapMode3D .mf-map4d .mf-ui .footer-map {
+    bottom: 0px;
+    width: 72px;
+    height: 35px;
+    right: 72px;
+    position: absolute;
+}
+#map4d .mf-map4d .mf-ui .mf-right, #mapMode3D .mf-map4d .mf-ui .mf-right {
+    background-image: url(/images/btn-right.png);
+}
+#map4d .mf-map4d .mf-ui .mf-left, #mapMode3D .mf-map4d .mf-ui .mf-left {
+    background-image: url(/images/btn-left.png);
+}
+#map4d .mf-map4d .mf-ui .mf-up, #mapMode3D .mf-map4d .mf-ui .mf-up {
+    background-image: url(/images/btn-up.png);
+}
+#map4d .mf-map4d .mf-ui .mf-down, #mapMode3D .mf-map4d .mf-ui .mf-down {
+    background-image: url(/images/btn-down.png);
+}

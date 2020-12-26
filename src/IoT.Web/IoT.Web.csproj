@@ -1,0 +1,97 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>IoT.Web</RootNamespace>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    <UserSecretsId>IoT-4681b4fd-151f-4221-84a4-929d86723e4c</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Compile Remove="wwwroot\Object3D\**" />
+    <Content Remove="Logs\**" />
+    <Content Remove="wwwroot\Object3D\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <EmbeddedResource Remove="wwwroot\Object3D\**" />
+    <None Remove="Logs\**" />
+    <None Remove="wwwroot\Object3D\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\libs\ThemeBasic\CheckInput.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\libs\ThemeBasic\CheckInput.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Pages\**\*.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Pages\**\*.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="5.4.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="1.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Module\Account\src\Volo.Abp.Account.Web.IdentityServer\Volo.Abp.Account.Web.IdentityServer.csproj" />
+    <ProjectReference Include="..\..\..\Module\BTS\src\IoT.BTS.Web\IoT.BTS.Web.csproj" />
+    <ProjectReference Include="..\..\..\Module\Identity\src\Volo.Abp.Identity.Web\Volo.Abp.Identity.Web.csproj" />
+    <ProjectReference Include="..\..\..\Module\Theme\Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic\Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.csproj" />
+    <ProjectReference Include="..\IoT.Application\IoT.Application.csproj" />
+    <ProjectReference Include="..\IoT.HttpApi\IoT.HttpApi.csproj" />
+    <ProjectReference Include="..\IoT.MongoDB\IoT.MongoDB.csproj" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.Swashbuckle" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Authentication.JwtBearer" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.Identity.Web" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Web" Version="3.3.1" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Web" Version="3.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\libs\ThemeBasic\images\" />
+    <Folder Include="wwwroot\libs\ThemeBasic\plugins\ionslider\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\libs\MapSdk\map4dll%401.3.4.prod.js" />
+    <None Include="wwwroot\libs\MapSdk\map4dsdk%401.3.5.prod.js" />
+    <None Include="wwwroot\libs\MapSdk\map4dsdk%401.4.0.prod.js" />
+    <None Include="wwwroot\libs\MapSdk\map4dsdk%401.4.2.prod.js" />
+    <None Include="wwwroot\libs\MapView\js\initmap.js" />
+    <None Include="wwwroot\libs\ThemeBasic\bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <None Include="wwwroot\libs\ThemeBasic\lightbox\lightbox-plus-jquery.js" />
+    <None Include="wwwroot\libs\ThemeBasic\lightbox\lightbox-plus-jquery.min.js" />
+    <None Include="wwwroot\libs\ThemeBasic\lightbox\lightbox-plus-jquery.min.map" />
+    <None Include="wwwroot\libs\ThemeBasic\lightbox\lightbox.js" />
+    <None Include="wwwroot\libs\ThemeBasic\lightbox\lightbox.min.js" />
+    <None Include="wwwroot\libs\ThemeBasic\lightbox\lightbox.min.map" />
+    <None Include="wwwroot\libs\ThemeBasic\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\libs\ThemeBasic\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\libs\ThemeBasic\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\libs\ThemeBasic\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\libs\ThemeBasic\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\libs\ThemeBasic\webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+
+</Project>

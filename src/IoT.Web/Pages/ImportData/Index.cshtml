@@ -1,0 +1,70 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using IoT.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model IoT.Web.Pages.ImportData.IndexModel
+
+@inject IHtmlLocalizer<IoTResource> L
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="/libs/select2/css/select2.min.css">
+<script src="/libs/jquery/jquery.js?_v=637417844530016754"></script>
+
+<script src="/libs/select2/js/select2.min.js?_v=637417844530250661"></script>
+    <abp-script-bundle>
+        <abp-script src="/Pages/ImportData/Importdata.js" />
+    </abp-script-bundle>
+
+
+
+    <style>
+        span.select2-selection.select2-selection--single {
+            border-radius: 0;
+            border-color: rgb(210, 214, 222);
+            height: 32px !important;
+            font-size: 14px !important;
+            line-height: 1.5
+        }
+
+        .select2-container .select2-selection--single .select2-selection__rendered {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            line-height: 1.85 !important;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__clear {
+            margin-right: 10px;
+        }
+    </style>
+
+
+
+<form method="post" asp-page="/ImportData/Index" enctype="multipart/form-data">
+    <abp-modal>
+        <abp-modal-header title="Thêm mới"></abp-modal-header>
+        <abp-modal-body>
+            <abp-row>
+                <abp-column size-md="_6">
+                    <abp-input asp-for="Input.Files"></abp-input>
+                </abp-column>
+
+                <abp-column size-md="_6">
+                    <abp-select asp-for="Input.CityCode" asp-items="@Model.ListCity" label="@L["Cities"].Value" />
+                </abp-column>
+            </abp-row>
+
+            <abp-row>
+                <abp-column size-md="_6">
+                    <abp-input asp-for="Input.StartNumber" label="@L["StartNumber"].Value *"></abp-input>
+                </abp-column>
+
+                <abp-column size-md="_6">
+                    <abp-input asp-for="Input.EndNumber" label="@L["EndNumber"].Value *"></abp-input>
+                </abp-column>
+            </abp-row>
+        </abp-modal-body>
+        @*<input type="submit" class="btn btn-primary" />*@
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

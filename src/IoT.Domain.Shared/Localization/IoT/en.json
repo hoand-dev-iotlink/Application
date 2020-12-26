@@ -1,0 +1,13 @@
+﻿{
+  "culture": "en",
+  "texts": {
+    "Menu:Home": "Home",
+    "Welcome": "Welcome",
+    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io.",
+    "StartNumber": "Start number",
+    "EndNumber": "End number",
+    "Cities": "Cities",
+    "CityCode": "Cities",
+    "Files": "File"
+  }
+}
